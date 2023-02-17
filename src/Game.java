@@ -132,6 +132,7 @@ public class Game {
 
     public static void editArtifact() {
         clearScreen();
+        clearScreen();
         System.out.println("\t\t\t\t\tХарактеристики артефакта\n");
         System.out.println("Название артефакта: " + artifact.getName());
         System.out.println("Вид редкости: " + artifact.getRarity());
