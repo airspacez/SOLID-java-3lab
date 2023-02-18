@@ -171,11 +171,11 @@ public class Game {
         System.out.println("y: " + human.getY());
         if((human.getX() == artifact.getX()) && (human.getY() == artifact.getY())) { 
             human.pickUpArtifact();
-            System.out.println("\t\t\t\t\tАртефакт подобран! \n\t\t\t\tНазвание артефакта: " + artifact.getName() + "\n\t\t\t\tРедкость артефакта: " + artifact.getRarity());  
+            System.out.println("\t\t\t\tАртефакт подобран! \n\t\t\t\tНазвание артефакта: " + artifact.getName() + "\n\t\t\t\tРедкость артефакта: " + artifact.getRarity());
         }
         try (Scanner scanner = new Scanner(System.in)) {
-            String action = scanner.nextLine();
-            switch (action) {
+            String movement = scanner.nextLine();
+            switch (movement) {
                 case "up":
                     human.MoveUp();
                     startGame();
