@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Game {
-    static Human<Integer> human = new Human<Integer>(1, "Leonid", 100, 100, 10);
+    static Human<String> human = new Human<String>("1", "Leonid", 100, 100, 10);
     static Surface surface = new Surface();
     static Artifact artifact = new Artifact("Hello", "111", 60, 60);
 
@@ -76,7 +76,7 @@ public class Game {
 
     }
 
-    public static void refreshName(Human<Integer> human) {
+    public static void refreshName(Human<String> human) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите имя: ");
             String name = scanner.nextLine();
@@ -85,29 +85,29 @@ public class Game {
         }
     }
 
-    public static void refreshHealth(Human<Integer> human) {
+    public static void refreshHealth(Human<String> human2) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите кол-во здоровья: ");
             int health = scanner.nextInt();
-            human.setHealth(health);
+            human2.setHealth(health);
             startMenu();
         }
     }
 
-    public static void refreshDamage(Human<Integer> human) {
+    public static void refreshDamage(Human<String> human2) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите кол-во урона: ");
             int damage = scanner.nextInt();
-            human.setDamage(damage);
+            human2.setDamage(damage);
             startMenu();
         }
     }
 
-    public static void refreshSpeed(Human<Integer> human) {
+    public static void refreshSpeed(Human<String> human2) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите значение скорости передвижения: ");
             int speed = scanner.nextInt();
-            human.setSpeed(speed);
+            human2.setSpeed(speed);
             startMenu();
         }
     }
