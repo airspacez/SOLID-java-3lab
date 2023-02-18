@@ -31,7 +31,8 @@ public class Human extends Unit {
 
     @Override
     public void pickUpArtifact() {
-
+        health += 10;
+        damage += 10;
     }
 
 }

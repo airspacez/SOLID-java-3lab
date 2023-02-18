@@ -3,13 +3,13 @@ public abstract class Unit extends GameObject implements Interaction {
     private String name;
 
     // Характеристики юнита
-    private int health;
-    private int damage;
+    protected int health;
+    protected int damage;
     protected int speed;
 
     public Unit() {
         super();
-        health = 0;
+        health = 10;
         damage = 0;
         speed = 1;
     }
@@ -52,4 +52,5 @@ public abstract class Unit extends GameObject implements Interaction {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
+
 }

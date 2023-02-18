@@ -4,8 +4,8 @@ public class Surface {
     private int y;
 
     public Surface() {
-        this.x = 50;
-        this.y = 50;
+        this.x = 100;
+        this.y = 100;
     }
 
     public Surface(int x, int y) {

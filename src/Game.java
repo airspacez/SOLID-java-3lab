@@ -1,15 +1,12 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class Game {
     static Human human = new Human("Leonid", 100, 100, 5);
     static Surface surface = new Surface();
-    static Artifact artifact = new Artifact();
-    List<Unit> units;
+    static Artifact artifact = new Artifact("Hello", "111", 60, 60);
 
     public static void startMenu() {
         clearScreen();
-
         System.out.print("\n\t\t\t\t\tВыберите опцию: ");
         System.out.print("\n1. Изменить характеристики персонажа ");
         System.out.print("\n2. Изменить размер карты ");
@@ -34,7 +31,6 @@ public class Game {
                 default:
                     System.out.println("Досвидания!");
                     System.exit(0);
-
             }
         }
     }
@@ -132,14 +128,13 @@ public class Game {
 
     public static void editArtifact() {
         clearScreen();
-        clearScreen();
-        System.out.println("\t\t\t\t\tХарактеристики артефакта\n");
+        System.out.println("\t\t\t\t\tХарактеристики артефакта");
         System.out.println("Название артефакта: " + artifact.getName());
         System.out.println("Вид редкости: " + artifact.getRarity());
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите название артефакта: ");
             String name = scanner.nextLine();
-            System.out.print("\nВведите название редкости: ");
+            System.out.print("Введите название редкости: ");
             String rarity = scanner.nextLine();
             artifact.setName(name);
             artifact.setRarity(rarity);
@@ -163,15 +158,20 @@ public class Game {
             System.out.println("Конец карты!!!");
             human.setY(0);
         }
+
+        if(human.getX() > surface.getX()) {
+            System.out.println("Конец карты!!!");
+            human.setX(surface.getX());
+        }
         System.out.println("РАЗМЕР КАРТЫ: " + surface.getX() + " на " + surface.getY()
                 + "\tАртефакт находится по координатам: " + artifact.getX() + ", " + artifact.getY() + "\n");
         System.out.println("Доступные команды: left, right, up, down, q, quit");
         System.out.println("\nТекущие координаты " + human.getName() + ":");
         System.out.println("x: " + human.getX());
         System.out.println("y: " + human.getY());
-        if(human.getX() > surface.getX()) {
-            System.out.println("Конец карты!!!");
-            human.setX(surface.getX());
+        if((human.getX() == artifact.getX()) && (human.getY() == artifact.getY())) { 
+            human.pickUpArtifact();
+            System.out.println("\t\t\t\t\tАртефакт подобран! \n\t\t\t\tНазвание артефакта: " + artifact.getName() + "\n\t\t\t\tРедкость артефакта: " + artifact.getRarity());  
         }
         try (Scanner scanner = new Scanner(System.in)) {
             String action = scanner.nextLine();
