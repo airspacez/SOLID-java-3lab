@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Game {
-    static Human human = new Human("Leonid", 100, 100, 5);
+    static Human human = new Human("Leonid", 100, 100, 10);
     static Surface surface = new Surface();
     static Artifact artifact = new Artifact("Hello", "111", 60, 60);
 
