@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Game {
-    static Human human = new Human("Leonid", 100, 100, 10);
+    static Human<Integer> human = new Human<Integer>(1, "Leonid", 100, 100, 10);
     static Surface surface = new Surface();
     static Artifact artifact = new Artifact("Hello", "111", 60, 60);
 
@@ -42,6 +42,7 @@ public class Game {
         System.out.print("\nКол-во ХП: " + human.getHealth());
         System.out.print("\nКол-во ДПС: " + human.getDamage());
         System.out.print("\nСкорость передвижения: " + human.getSpeed());
+        System.out.print("\nID: " + human.getId());
         System.out.print("\n\t\t\t\t\tВыберите опцию: ");
         System.out.print("\n1. Изменить имя ");
         System.out.print("\n2. Изменить кол-во ХП ");
@@ -75,7 +76,7 @@ public class Game {
 
     }
 
-    public static void refreshName(Human human) {
+    public static void refreshName(Human<Integer> human) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите имя: ");
             String name = scanner.nextLine();
@@ -84,7 +85,7 @@ public class Game {
         }
     }
 
-    public static void refreshHealth(Human human) {
+    public static void refreshHealth(Human<Integer> human) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите кол-во здоровья: ");
             int health = scanner.nextInt();
@@ -93,7 +94,7 @@ public class Game {
         }
     }
 
-    public static void refreshDamage(Human human) {
+    public static void refreshDamage(Human<Integer> human) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите кол-во урона: ");
             int damage = scanner.nextInt();
@@ -102,7 +103,7 @@ public class Game {
         }
     }
 
-    public static void refreshSpeed(Human human) {
+    public static void refreshSpeed(Human<Integer> human) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("\nВведите значение скорости передвижения: ");
             int speed = scanner.nextInt();

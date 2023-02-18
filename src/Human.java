@@ -1,11 +1,11 @@
-public class Human extends Unit {
+public class Human<T> extends Unit<T> {
 
     public Human() {
         super();
     }
 
-    public Human(String name, int health, int damage, int speed) {
-        super(name, damage, damage, speed);
+    public Human(T id, String name, int health, int damage, int speed) {
+        super(id, name, health, damage, speed);
     }
 
     @Override

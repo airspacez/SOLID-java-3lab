@@ -1,4 +1,5 @@
-interface Interaction {
+interface Interaction<T> {
+    T getId();
 
     void MoveUp();
 
